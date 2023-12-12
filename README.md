@@ -1,5 +1,9 @@
-My First Dockerfile
+#My First Dockerfile
 
-запуск при помощи команды
 
+#сборка при помощи команды
+docker build -t hello1 .
+
+
+#запуск при помощи команды
 sudo docker run --detach --publish 8080:8080
