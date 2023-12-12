@@ -18,7 +18,7 @@ RUN apt install tomcat9 -y
 ###################################################
 
 
-#клонируем репозиторий в папку ./boxfuse-sample-java-war-hello
+#клонируем репозиторий в папку /tmp/boxfuse-sample-java-war-hello
 RUN cd /tmp
 RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
 
