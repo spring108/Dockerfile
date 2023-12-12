@@ -5,7 +5,8 @@ RUN apt update
 RUN apt install git -y
 
 #устанавливаем JAVA
-RUN apt install default-jdk -y
+###RUN apt install default-jdk -y
+RUN apt install openjdk-17-jdk -y
 
 #устанавливаем компилятор JAVA
 RUN apt install maven -y
