@@ -29,5 +29,5 @@ RUN mv /tmp/boxfuse-sample-java-war-hello/target/hello-1.0.war /var/lib/tomcat9/
 #и сразу же доступна страничка по адресу http://84.201.133.81:8080/hello
 
 #объявим порт, не забыть пробросить
-CMD ["catalina.sh", "run"]
+CMD ["/usr/share/tomcat9/bin/catalina.sh", "run"]
 EXPOSE 8080/tcp
