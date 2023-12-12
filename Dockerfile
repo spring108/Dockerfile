@@ -1,17 +1,17 @@
 FROM ubuntu:18.04
-RUN sudo apt update
+RUN apt update
 
 #устанавливаем GIT
-RUN sudo apt install git -y
+RUN apt install git -y
 
 #устанавливаем JAVA
-RUN sudo apt install default-jdk -y
+RUN apt install default-jdk -y
 
 #устанавливаем компилятор JAVA
-RUN sudo apt install maven -y
+RUN apt install maven -y
 
 #устанавливаем APACHE TOMCAT
-RUN sudo apt install tomcat9 -y
+RUN apt install tomcat9 -y
 
 
 ###################################################
@@ -24,10 +24,9 @@ RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
 RUN cd boxfuse-sample-java-war-hello
 RUN mvn package
 #перемещаем готовый WAR-файл в папку TOMCAT (переименовывая его)
-RUN sudo mv ./target/hello-1.0.war /var/lib/tomcat9/webapps/hello.war
+RUN mv ./target/hello-1.0.war /var/lib/tomcat9/webapps/hello.war
 #поскольку служба tomcat9 запущена, то WAR-файл тут же будет развёрнут в приложение
 #и сразу же доступна страничка по адресу http://84.201.133.81:8080/hello
 
 #объявим порт, не забыть пробросить
 EXPOSE 8080/tcp
-
