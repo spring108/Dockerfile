@@ -1,12 +1,12 @@
-FROM ubuntu:18.04
+FROM ubuntu:22.04
 RUN apt update
 
 #устанавливаем GIT
 RUN apt install git -y
 
 #устанавливаем JAVA
-###RUN apt install default-jdk -y
-RUN apt install openjdk-17-jdk -y
+RUN apt install default-jdk -y
+###RUN apt install openjdk-17-jdk -y
 
 #устанавливаем компилятор JAVA
 RUN apt install maven -y
