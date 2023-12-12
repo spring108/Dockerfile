@@ -28,6 +28,9 @@ RUN mv /tmp/boxfuse-sample-java-war-hello/target/hello-1.0.war /var/lib/tomcat9/
 #поскольку служба tomcat9 запущена, то WAR-файл тут же будет развёрнут в приложение
 #и сразу же доступна страничка по адресу http://84.201.133.81:8080/hello
 
-#объявим порт, не забыть пробросить
+#запустить контейнерообразующий процесс
+RUN cd /usr/share/tomcat9/bin
 CMD ["/usr/share/tomcat9/bin/catalina.sh", "run"]
+
+#объявим порт, не забыть пробросить
 EXPOSE 8080/tcp
