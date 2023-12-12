@@ -22,7 +22,7 @@ RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
 
 #компилируем проект
 RUN cd boxfuse-sample-java-war-hello
-RUN sudo mvn package
+RUN mvn package
 #перемещаем готовый WAR-файл в папку TOMCAT (переименовывая его)
 RUN mv ./target/hello-1.0.war /var/lib/tomcat9/webapps/hello.war
 #поскольку служба tomcat9 запущена, то WAR-файл тут же будет развёрнут в приложение
