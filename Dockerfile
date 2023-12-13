@@ -20,9 +20,6 @@ RUN cd /tmp && git clone https://github.com/boxfuse/boxfuse-sample-java-war-hell
 #компилируем проект
 RUN cd /tmp/boxfuse-sample-java-war-hello && mvn package
 #перемещаем готовый WAR-файл в папку TOMCAT (переименовывая его)
-RUN mv /tmp/boxfuse-sample-java-war-hello/target/hello-1.0.war /var/lib/tomcat9/webapps/hello.war
-#поскольку служба tomcat9 запущена, то WAR-файл тут же будет развёрнут в приложение
-#и сразу же доступна страничка по адресу http://84.201.133.81:8080/hello
 
 
 ###################################################
@@ -171,6 +168,13 @@ EXPOSE 8080
 
 # upstream eclipse-temurin-provided entrypoint script caused https://github.com/docker-library/tomcat/issues/77 to come back as https://github.com/docker-library/tomcat/issues/302; use "/entrypoint.sh" at your own risk
 ENTRYPOINT []
+
+
+
+#перенос артефакта
+RUN mv /tmp/boxfuse-sample-java-war-hello/target/hello-1.0.war /var/lib/tomcat9/webapps/hello.war
+
+
 
 CMD ["catalina.sh", "run"]
 
